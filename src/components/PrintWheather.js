@@ -5,13 +5,13 @@ function PrintWheater({ wheather }) {
   const main=wheather.wheather.main;
 
   return wheather.loading ? (
-    <h2>loading</h2>) : wheather.error ? (<h2> {wheather.error}</h2>) :
+    <h2>loading Page</h2>) : wheather.error ? (<h2> {wheather.error}</h2>) :
       (<ul>
         {console.log(main)}
 
-        <li>City: {name} </li>
-        <li> Id: {wheather.wheather.id}</li>
-
+        <li>City : {name} </li>
+        {/* <li> Id : {wheather.wheather.id}</li> */}
+          
       </ul>
       )
 };

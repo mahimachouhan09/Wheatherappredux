@@ -16,7 +16,7 @@ class InputForm extends Component {
 
   onFormSubmit = event => {
     event.preventDefault()
-    this.props.getwheather(this.state.city)
+    this.props.getWheather(this.state.city)
     this.setState({
       city: ''
     })
@@ -30,10 +30,8 @@ class InputForm extends Component {
           value = {this.state.city}
           onChange = {this.onInputChange } 
         />
-
         <button type="submit" >Submit</button>
         <Wheathercontainer />
-
       </form>
     )
     }
