@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
-import { getWheather } from '../actions/index';
-import PrintWheater from '../components/PrintWheather';
+import { getWheather, getHistory } from '../actions/index';
+import History from '../components/History';
 
 const mapStateToProps = state => {
   return {
-    wheather: state.wheather
+    history: state.history
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getWheather: (city) => dispatch(getWheather(city))
+    getHistory: (city) => dispatch(getHistory(city))
   }
 }
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PrintWheater)
+)(History)

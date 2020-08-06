@@ -10,9 +10,7 @@ const initialState = {
   wheather: {},
   error: ''
 }
-  
 const wheather = (state = initialState, action) => {
-  console.log(action.type)
   switch (action.type) {
     case FETCH_WHEATHER_REQUEST:
       return {

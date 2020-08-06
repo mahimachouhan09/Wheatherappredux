@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getWheather } from '../actions'
+import { getWheather , getHistory } from '../actions'
 import Wheathercontainer from '../containers/Wheathercontainer';
+import Historycontainer from '../containers/Historycontainer';
 
 class InputForm extends Component {
   constructor(props) {
     super(props)
     this.state = { 
       city : '',
-      main : undefined 
+      main : undefined,
+
+
     }
   }
 
@@ -17,6 +20,7 @@ class InputForm extends Component {
   onFormSubmit = event => {
     event.preventDefault()
     this.props.getWheather(this.state.city)
+    this.props.getHistory(this.state.city)
     this.setState({
       city: ''
     })
@@ -32,10 +36,10 @@ class InputForm extends Component {
         />
         <button type="submit" >Submit</button>
         <Wheathercontainer />
+        <Historycontainer />
       </form>
     )
     }
 }
 
-
-export default connect(null, { getWheather })(InputForm)
+export default connect(null, { getWheather , getHistory })(InputForm)
